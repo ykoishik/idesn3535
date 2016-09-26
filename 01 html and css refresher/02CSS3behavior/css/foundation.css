@@ -23,10 +23,10 @@ p {font-family: Cabin; font-size: 11px; height: 200px; width: 175px;}
 
 #right {float: right; margin: 2px; }
 
-.caption {color: white ;
+.caption {color: yellowgreen;
             text-decoration: none ;
             padding: 5px ;
-            background-color: red ;
+            background-color: blueviolet;
             transition-property: background-color ; 
             /*new stuff*/
             transition-duration: 3s ;
@@ -39,13 +39,13 @@ p {font-family: Cabin; font-size: 11px; height: 200px; width: 175px;}
 
             transition: background-color 0.3s ease 3s, color 0.5s ease-in-out} 
 
-            .caption:hover{ background-color:blue;
-            color: yellow; }
+            .caption:hover{ background-color:indianred;
+            color: white; }
 
-.caption2 {color: white ;
+.caption2 {color: orangered;
             text-decoration: none ;
             padding: 5px ;
-            background-color: blueviolet;
+            background-color: green;
             transition-property: background-color ; 
             /*new stuff*/
             transition-duration: 0.3s ;
@@ -58,14 +58,14 @@ p {font-family: Cabin; font-size: 11px; height: 200px; width: 175px;}
 
             transition: background-color 0.3s ease 3s, color 0.5s ease-in-out} 
 
-            .caption2:hover{ background-color:gray;
-            color: pink; }
+            .caption2:hover{ background-color:yellow;
+            color: blue; }
 
 
 .caption3 {color: white ;
             text-decoration: none ;
             padding: 5px ;
-            background-color: black;
+            background-color: hotpink;
             transition-property: background-color ; 
             /*new stuff*/
             transition-duration: 0.3s ;
@@ -78,14 +78,14 @@ p {font-family: Cabin; font-size: 11px; height: 200px; width: 175px;}
 
             transition: background-color 0.3s ease 1s, color 0.5s ease-in-out} 
 
-            .caption3:hover{ background-color:tomato;
-            color: orange; }
+            .caption3:hover{ background-color:firebrick;
+            color: ghostwhite; }
 
 
 ul li a {color: black;
             text-decoration: none ;
             padding: 5px ;
-            background-color:  ;
+            background-color:  palevioletred;
             transition-property: background-color ; 
             /*new stuff*/
             transition-duration: 0.5s ;
@@ -97,17 +97,17 @@ ul li a {color: black;
             -o-transition: background-color 0.1s ease 1s, color 0.4s ease-in-out;
 
             transition: background-color 0.1s ease 1s, color 0.4s ease-in-out}
-  ul li a:hover{ background-color:blue;
-            color: yellow; }
+  ul li a:hover{ background-color:orange;
+            color: white; }
 
 
-.fade{;
+img{;
 
 -moz-transition:-moz-transform 0.5s ease-in; 
 -webkit-transition:-webkit-transform 0.5s ease-in; 
 -o-transition:-o-transform 0.5s ease-in;
 }
-.fade:hover{
+img:hover{
 -moz-transform:scale(2); 
 -webkit-transform:scale(2);
 -o-transform:scale(2);
@@ -117,11 +117,11 @@ ul li a {color: black;
 
 
 
-.spin{position: absolute;
-    top: 60%;
+.kanban{position: absolute;
+    top: 15%;
     left: 60%;
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 60px;
     margin:-60px 0 0 -60px;
     -webkit-animation:spin 4s linear infinite;
     -moz-animation:spin 4s linear infinite;
