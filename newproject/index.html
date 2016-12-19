@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<html>
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+  jQuery('#search').click(submit_search);
+  jQuery('#nestedform').find('input').keydown(keypressed);
+});
+ 
+function submit_search(event) {
+  var values = [];
+  event.preventDefault;
+  values[0] = jQuery('#item').val();
+  if (values[0]) {
+    do_submit('#output', values);
+  } else {
+    alert('No Item given');
+  }
+  return false;
+}
+ 
+function keypressed(event) {
+  var charcode = (event.which) ? event.which : window.event.keyCode;
+  if (charcode == 13) {
+    return submit_search(event);
+  }
+  return true;
+}
+ 
+function do_submit(submit_output, submit_values) {
+  jQuery(submit_output).hide();
+  var posting = jQuery.post(
+    "search.php", {
+      'search_values[]': submit_values
+    });
+  posting.done = function(data) {
+    jQuery(submit_output).html(data.substr(0, data.length));
+    jQuery(submit_output).show();
+  };
+}
+</script>
+</head>
+<body>
+<form method="post" action="post.php">
+    <textarea rows="5" cols="20" wrap="physical" name="post"> 
+    <input type="submit" value="Post">
+    <div id="nestedform">
+        Item: <input type="text" size="10" id="item" name="item">
+        <input type="button" id="search" value="Search">
+        <div id="output"></div>
+    </div>
+</form>
+</body>
+</html>
+</html>

@@ -1,7 +1,10 @@
+
+
+
 li {text-decoration: none;
     list-style: none;
- position: relative;
-  left: 300px;}
+ position: relative;  left: 300px;
+}
 
 a  {list-style-type:none;
 position: relative;
@@ -21,19 +24,18 @@ nav{position: relative; right: 600px;}
 #checkbox {margin-left: 50px;}
     
 h2 {color: white;
-padding-left: 40px
-14px;}
+padding-left: 10px ;}
 
 header{
      font-family: 'Open Sans';
     color: white;
-    text-align;left: 
+    text-align: left;
     position: fixed;
     top: 0;
     /*margin: auto;*/
   
     width: 100%;
-    height: 40%;
+    height: 10%;
     z-index: 1000;  
     background-color: #0D99FC;
     padding-left: 2%; 

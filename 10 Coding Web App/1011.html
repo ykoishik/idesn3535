@@ -31,23 +31,115 @@ Note: web browsers typically only store up to 5MB of data per domain.
 <h2>local storage</h2>
 <!--form -->
 <form id="persisent_form" name="persisent_form" method="post" action="">
-    <!--full name text-->
+    <!--full goal name text-->
     <div class="label">
-        <label for="fullname">Full name:</label>
+        <label for="fullname">Goal name:</label>
     </div>
-    <!--full name text box-->
+    <!--full name goal box-->
     <div class="field">
         <input type="text" name="fullname" id="fullname" size="40" />
     </div>
 
-    <!--email text-->
+<!--task1 text-->
     <div class="label">
-        <label for="email">Email:</label>
+        <label for="email">Task 1:</label>
     </div>
-    <!--email text box-->
+    <!--task1 text box-->
     <div class="field">
         <input type="text" name="email" id="email" size="40" />
     </div>
+
+    <!--task1 text box-->
+    <div class="label">
+        <label for="task name1"></label>
+    </div>
+
+    <!--task1 text-->
+    <div class="label">
+        <label for="email">Task 1:</label>
+    </div>
+    <!--task1 text box-->
+    <div class="field">
+        <input type="text" name="email" id="email" size="40" />
+    </div>
+
+    <!--task1 text box-->
+    <div class="label">
+        <label for="task name1"></label>
+    </div>
+
+    <!--task1 text-->
+    <div class="label">
+        <label for="email">Task 1:</label>
+    </div>
+    <!--task1 text box-->
+    <div class="field">
+        <input type="text" name="email" id="email" size="40" />
+    </div>
+
+    <!--task1 text box-->
+    <div class="label">
+        <label for="task name1"></label>
+    </div>
+
+    <!--task1 text-->
+    <div class="label">
+        <label for="email">Task 1:</label>
+    </div>
+    <!--task1 text box-->
+    <div class="field">
+        <input type="text" name="email" id="email" size="40" />
+    </div>
+
+    <!--task1 text box-->
+    <div class="label">
+        <label for="task name1"></label>
+    </div>
+
+    <script type="text/template" id="list-item-template">
+        <li class="task">
+            <label>
+                <input class="checkbox" type="checkbox">
+                <span class="task-name"><!-- TASK_NAME --></span>
+            </label>
+        </li>
+
+
+
+
+    </script>
+
+
+
+
+    <!--task1 text-->
+    <div class="label">
+        <label for="email">Task 1:</label>
+    </div>
+    <!--task1 text box-->
+    <div class="field">
+        <input type="text" name="email" id="email" size="40" />
+    </div>
+
+    <!--task1 text box-->
+    <div class="label">
+        <label for="task name1"></label>
+    </div>
+
+    <!--task1 text-->
+    <div class="label">
+        <label for="email">Task 1:</label>
+    </div>
+    <!--task1 text box-->
+    <div class="field">
+        <input type="text" name="email" id="email" size="40" />
+    </div>
+
+    <!--task1 text box-->
+    <div class="label">
+        <label for="task name1"></label>
+    </div>
+
 
 
     <!--empty space-->
@@ -58,7 +150,19 @@ Note: web browsers typically only store up to 5MB of data per domain.
         <input type="submit" name="save" id="save" value="Save" />
     </div>
 </form>
-<p id="goal_name">dfkjaalk;sdfj;aklsj;</p>
+<div>GOAL</div>
+<div id="goal_name"> </div>
+<p id="task_name"> </p>  <input class="checkbox" type="checkbox">
+<span class="task-name"><!-- Task 1 --></span>
+</label>
+<p id="task name1"> </p>
+<p id="task name2"> </p>
+<p id="task name3"> </p>
+<p id="task name4"> </p>
+<p id="task name5"> </p>
+<p id="task name6"> </p>
+<p id="task name7"> </p>
+<p id="task name8"> </p>
 
 <!--
 
@@ -70,6 +174,13 @@ Page 421 in Duckett lists all of the methods and properties of the localStorage 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 <script type="text/javascript">
+
+
+
+
+
+
+
     //when page is finished loading
     $(document).ready ( function ( ) {
         //create variables
@@ -84,6 +195,7 @@ Page 421 in Duckett lists all of the methods and properties of the localStorage 
             local_stored_name = localStorage.name ;
             local_stored_mail = localStorage.mail ;
             local_stored_goal = localStorage.goal ;
+            local_stored_task = localStorage.task ;
 
             //put information from storage into text boxes
             $('#fullname').val( local_stored_name ) ;
@@ -91,6 +203,7 @@ Page 421 in Duckett lists all of the methods and properties of the localStorage 
             var ls_goal = $.parseJSON(local_stored_goal) ;
             //This is the variable for printing 'username'
             $('#goal_name').text( ls_goal.username ) ;
+            $('#task_name').text( local_stored_mail) ;
             //console.log is my best friend.
             console.log(ls_goal.goal_name) ;
         }
@@ -103,6 +216,8 @@ Page 421 in Duckett lists all of the methods and properties of the localStorage 
         //gets the name from the text fields of fullname and email.
         var name = $('#fullname').val() ;
         var mail = $('#email').val() ;
+        var goal = $('#goal_name').val () ;
+        var task = $('#task_name').val () ;
 
         // If name is not blank and mail is not blank make 'goal'
         if ( name != '' && mail != '' ) {
@@ -128,8 +243,36 @@ Page 421 in Duckett lists all of the methods and properties of the localStorage 
             }
             localStorage.name = name ;
             localStorage.mail = mail ;
+            localStorage.task = task ;
             localStorage.goal = JSON.stringify(goal) ;
             alert ( 'Your info has been saved persistently in localStorage!' );
+
+
+            var checkbox = targetElement.querySelector(".checkbox");
+
+            if (checkbox.checked) {
+                targetElement.classList.add("completed");
+            } else {
+                targetElement.classList.remove("completed");
+            }
+
+
+            todolistContainer.addEventListener('click', function(event) {
+                var targetElement = event.toElement;
+
+                while (!targetElement.classList.contains("task")) {
+                    targetElement = targetElement.parentElement;
+                }
+
+                var checkbox = targetElement.querySelector(".checkbox");
+
+                if (checkbox.checked) {
+                    targetElement.classList.add("completed");
+                } else {
+                    targetElement.classList.remove("completed");
+                }
+            });
+
         }
 
     });
